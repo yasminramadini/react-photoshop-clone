@@ -1,0 +1,63 @@
+*::after, *::before {
+  box-sizing: border-box;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: 
+    'image sidebar'
+    'slider sidebar';
+  height: 100vh;
+  width: 100vw;
+  background: #ddd;
+}
+
+.main-image {
+  grid-area: 'image';
+  background-image: url('sky.jpg');
+  background-size: contain;
+  background-position: top center;
+  background-repeat: no-repeat;
+}
+
+.sidebar {
+  grid-area: 'sidebar';
+  background: #9c2f9c;
+  height: 100%;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.slider-container {
+  grid-area: 'slider';
+  background: #fff;
+  margin-top: 1rem;
+  padding: 1rem;
+}
+
+.slider-container input {
+  width: 100%;
+  cursor: pointer;
+}
+
+.sidebar button {
+  background: transparent;
+  padding: 1rem;
+  color: #fff;
+  border: none;
+  outline: none;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.sidebar button:hover, .sidebar:focus {
+  background: #7a247a;
+}
+
+.sidebar button.active {
+  background: #581958;
+}
